@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "AccessiGen Companion",
+  "version": "1.0.0",
+  "description": "Enterprise Accessibility Intelligence & Simulator",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}
